@@ -36,6 +36,17 @@ class WordPlay
       anagram = grouped_dictionary.select { |k| k.size > 1 }
   end
   
+  # Check for ananagrams in the dictionary
+  # Return::  Array with the words that are ananagrams
+  def check_for_ananagrams
+      
+      # Use method group_by from Enumerable to group the ananagrams
+      grouped_dictionary = @dictionary.group_by { |element| element.downcase.chars.sort }.values
+     
+      # Select the anagrams words
+      ananagram = grouped_dictionary.select { |k| k.size == 1 }
+  end
+  
   # Print loaded dictionary
   def print_dictionary
     # Print the dictionary words
