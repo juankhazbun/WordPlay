@@ -10,5 +10,10 @@ word_play = WordPlay.new
 # Load dictionary
 word_play.load_dictionary("files/test.txt")
 
-# Print loaded dictionary
-word_play.print_dictionary
+# Check for anagrams in the dictionary
+anagrams = word_play.check_for_anagrams
+
+# Print the anagrams
+anagrams.each { |list| puts list.join(", ") }
+
+puts "\n#{anagrams.size} groups of anagrams found."
