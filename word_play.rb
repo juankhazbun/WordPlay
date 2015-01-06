@@ -11,6 +11,8 @@ class WordPlay
     
     @dictionary = []
     
+    # TODO: Add the exception handler for file not found
+    
       # Open the file from the given path
       f = File.open(file)
       
@@ -21,6 +23,17 @@ class WordPlay
         f.each_line { |line| @dictionary.push line.chomp }
          
       end
+  end
+  
+  # Check for anagrams in the dictionary
+  # Return::  Array with the group of words that are anagrams
+  def check_for_anagrams
+      
+      # Use method group_by from Enumerable to group the ananagrams
+      grouped_dictionary = @dictionary.group_by { |element| element.downcase.chars.sort }.values
+     
+      # Select the anagrams words
+      anagram = grouped_dictionary.select { |k| k.size > 1 }
   end
   
   # Print loaded dictionary
