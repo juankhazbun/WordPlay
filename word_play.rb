@@ -9,7 +9,7 @@ class WordPlay
   # Load the dictionary from a file to an array
   def load_dictionary(file)
     
-    dictionary = []
+    @dictionary = []
     
       # Open the file from the given path
       f = File.open(file)
@@ -18,8 +18,14 @@ class WordPlay
       if f
         
         # Add each line of the file to the dictionary array
-        f.each_line { |line| dictionary.push line.chomp }
+        f.each_line { |line| @dictionary.push line.chomp }
          
       end
+  end
+  
+  # Print loaded dictionary
+  def print_dictionary
+    # Print the dictionary words
+    puts @dictionary.join(", ")
   end
 end
