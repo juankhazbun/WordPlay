@@ -1,25 +1,27 @@
-class WorldPlay
-  
-  # load a dictionary words to an array
-  def load_dictionary(file)
-    
-    # start with and empty array
-    dictionary = []
-    
-    # TODO: Remember to add the exception handler
-    
-      # Open the file
-      f = File.open(file)
-      
-      # Check if the file exists
-      if f
-        
-        # add each line of the file to the dictionary array
-        f.each_line {|line| puts line.strip}
-        
-      end
-  end
-end
+# Main file 
+#
+# Author::    Juan Carlos Hazbun Nieto <juankhazbun@gmail.com>
 
-anagram = WorldPlay.new
-anagram.load_dictionary("files/wl.txt")
+require_relative 'word_play'
+
+# Create object of word play
+word_play = WordPlay.new
+
+# Load dictionary
+word_play.load_dictionary("files/test.txt")
+
+# Check for anagrams in the dictionary
+anagrams = word_play.check_for_anagrams
+
+# Print the anagrams
+anagrams.each { |list| puts list.join(", ") }
+
+puts "\n#{anagrams.size} groups of anagrams found.\n"
+
+# Check for anagrams in the dictionary
+ananagrams = word_play.check_for_ananagrams
+
+# Print the anagrams
+ananagrams.each { |list| puts list.join(", ") }
+
+puts "\n#{ananagrams.size} ananagrams found.\n"
