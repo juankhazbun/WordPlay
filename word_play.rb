@@ -29,8 +29,8 @@ class WordPlay
   # Return::  Array with the group of words that are anagrams
   def check_for_anagrams
       
-      # Use method group_by from Enumerable to group the ananagrams
-      grouped_dictionary = @dictionary.group_by { |element| element.downcase.chars.sort }.values
+      # Group array
+      grouped_dictionary = group_array
      
       # Select the anagrams words
       anagram = grouped_dictionary.select { |k| k.size > 1 }
@@ -40,8 +40,8 @@ class WordPlay
   # Return::  Array with the words that are ananagrams
   def check_for_ananagrams
       
-      # Use method group_by from Enumerable to group the ananagrams
-      grouped_dictionary = @dictionary.group_by { |element| element.downcase.chars.sort }.values
+      # Group array
+      grouped_dictionary = group_array
      
       # Select the anagrams words
       ananagram = grouped_dictionary.select { |k| k.size == 1 }
@@ -51,5 +51,13 @@ class WordPlay
   def print_dictionary
     # Print the dictionary words
     puts @dictionary.join(", ")
+  end
+  
+  private
+  # Group the words in an array ordering the letters of the words
+  def group_array
+    
+      # Use method group_by from Enumerable to group the words that are equal
+      grouped_dictionary = @dictionary.group_by { |element| element.downcase.chars.sort }.values
   end
 end
