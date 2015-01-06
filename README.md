@@ -1,4 +1,4 @@
 WordPlay
 ========
 
-Word play class to list anagrams and ananagrams from a given dictionary
+Word play class list anagrams and ananagrams from a given dictionary
