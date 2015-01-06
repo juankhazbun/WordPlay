@@ -16,7 +16,7 @@ anagrams = word_play.check_for_anagrams
 # Print the anagrams
 anagrams.each { |list| puts list.join(", ") }
 
-puts "\n#{anagrams.size} groups of anagrams found."
+puts "\n#{anagrams.size} groups of anagrams found.\n"
 
 # Check for anagrams in the dictionary
 ananagrams = word_play.check_for_ananagrams
@@ -24,4 +24,4 @@ ananagrams = word_play.check_for_ananagrams
 # Print the anagrams
 ananagrams.each { |list| puts list.join(", ") }
 
-puts "\n#{ananagrams.size} groups of ananagrams found."
+puts "\n#{ananagrams.size} ananagrams found.\n"
