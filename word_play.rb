@@ -6,12 +6,12 @@
 
 class WordPlay
   
+  attr_reader :dictionary
+  
   # Load the dictionary from a file to an array
   def load_dictionary(file)
     
     @dictionary = []
-    
-    # TODO: Add the exception handler for file not found
     
       # Open the file from the given path
       f = File.open(file)
@@ -22,6 +22,10 @@ class WordPlay
         # Add each line of the file to the dictionary array
         f.each_line { |line| @dictionary.push line.chomp }
          
+      else
+         
+         # Raise file not found exception
+         raise Errno::ENOENT
       end
   end
   
@@ -48,10 +52,10 @@ class WordPlay
   end
   
   # Print loaded dictionary
-  def print_dictionary
-    # Print the dictionary words
-    puts @dictionary.join(", ")
-  end
+  #def print_dictionary
+  #  # Print the dictionary words
+  #  puts @dictionary.join(", ")
+  #end
   
   private
   # Group the words in an array ordering the letters of the words
