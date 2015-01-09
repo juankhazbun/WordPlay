@@ -21,5 +21,15 @@ class TestWordPlay < Minitest::Test
       @word_play.load_dictionary("./files/test.txt")
       assert_equal ['cars', 'for', 'potatoes', 'racs', 'four', 'scar', 'creams', 'scream'], @word_play.dictionary
     end
+    
+    should "return an array grouped with a list of anagrams" do
+      @word_play.load_dictionary("./files/test.txt")
+      assert_equal [['cars', 'racs', 'scar'], ['creams', 'scream']], @word_play.check_for_anagrams
+    end
+    
+    should "return an array with the ananagrams" do
+      @word_play.load_dictionary("./files/test.txt")
+      assert_equal [['for'], ['potatoes'], ['four']], @word_play.check_for_ananagrams
+    end
   end
 end
