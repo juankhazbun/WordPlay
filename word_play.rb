@@ -51,12 +51,6 @@ class WordPlay
       ananagram = grouped_dictionary.select { |k| k.size == 1 }
   end
   
-  # Print loaded dictionary
-  #def print_dictionary
-  #  # Print the dictionary words
-  #  puts @dictionary.join(", ")
-  #end
-  
   private
   # Group the words in an array ordering the letters of the words
   def group_array
