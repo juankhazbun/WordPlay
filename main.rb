@@ -10,7 +10,7 @@ word_play = WordPlay.new
 begin
   
   # Load dictionary
-  word_play.load_dictionary("files/test.txt")
+  word_play.load_dictionary("files/wl.txt")
   
   # Check for anagrams in the dictionary
   anagrams = word_play.check_for_anagrams
